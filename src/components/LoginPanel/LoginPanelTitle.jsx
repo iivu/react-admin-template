@@ -11,5 +11,5 @@ export default function LoginPanelTitle ({title}) {
 }
 
 LoginPanelTitle.defaultProps = {
-  title:'Admin-Template',
+  title: 'Admin-Template',
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Form, Tab,Button} from 'antd'
+import {Form, Tab, Button} from 'antd'
 import styles from './LoginPanel.module.scss'
 import FormItemConfig from './FormItemConfig'
 import LoginFormItem from './LoginFormItem'
@@ -11,8 +11,8 @@ class LoginPanel extends Component {
   onLogin = event => {
     event.preventDefault()
     const {form} = this.props
-    form.validateFieldsAndScroll((error,values) => {
-      if(!error) {
+    form.validateFieldsAndScroll((error, values) => {
+      if (!error) {
         console.log(values)
       }
     })
@@ -20,18 +20,18 @@ class LoginPanel extends Component {
 
   render () {
     const {form} = this.props
-    const formItemKeys =  Object.keys(FormItemConfig)
+    const formItemKeys = Object.keys(FormItemConfig)
     return (
       <>
         <LoginPanelTitle/>
         <div className={styles['login-panel-wrapper']}>
           <Form onSubmit={this.onLogin}>
             {
-              formItemKeys.map((key,index) => (
+              formItemKeys.map((key, index) => (
                 <LoginFormItem type={key} config={FormItemConfig[key]} form={form} key={index}/>
               ))
             }
-            <Button htmlType="submit" type="primary" size="large" style={{width:'100%'}}>Log In</Button>
+            <Button htmlType="submit" type="primary" size="large" style={{width: '100%'}}>Log In</Button>
           </Form>
         </div>
       </>
