@@ -4,7 +4,6 @@ import styles from './LoginPanel.module.scss'
 
 const FormItem = Form.Item
 
-
 export default function LoginFormItem ({type, config, form}) {
 
   const {getFieldDecorator} = form
