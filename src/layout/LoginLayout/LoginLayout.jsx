@@ -1,16 +1,18 @@
-import React, {Component} from 'react'
+import React from 'react'
 import styles from './LoginLayout.module.scss'
+import {Route,Redirect,Switch} from 'react-router-dom'
 
-import LoginPanel from '@/components/LoginPanel'
+import Login from '@/pages/Login'
 
-export default class LoginLayout extends Component {
+export default function LoginLayout ({match}) {
 
-  render () {
-    return (
-      <div className={styles['wrapper']}>
-        <LoginPanel/>
-      </div>
-    )
-  }
+  return (
+    <div className={styles['wrapper']}>
+      <Switch>
+        <Route path={`${match.url}/login`} component={Login}/>
+        <Redirect to="/user/login"/>
+      </Switch>
+    </div>
+  )
 
 }

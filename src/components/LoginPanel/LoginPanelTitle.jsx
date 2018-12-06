@@ -5,7 +5,7 @@ import styles from './LoginPanel.module.scss'
 export default function LoginPanelTitle ({title}) {
   return (
     <Link to="/">
-      <span className={styles.title}>{title}</span>
+      <div className={styles.title}>{title}</div>
     </Link>
   )
 }
