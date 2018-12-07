@@ -10,6 +10,10 @@
   white-space: nowrap;
 }
 
+.main-sider{
+  box-shadow: 2px 0 6px rgba(0,21,41,.35);
+}
+
 .main-layout {
   min-height: 100vh;
 }
@@ -20,5 +24,20 @@
 
 .main-header {
   background: #ffffff;
-  padding: 0 24px 0 0
+  padding: 0 24px 0 0;
+  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  .main-header-wrap {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    .menu-toggle-icon {
+      font-size: 20px;
+      padding: 22px 24px;
+      transition: background-color .5s;
+      &:hover {
+        cursor: pointer;
+        background: rgba(0,0,0,.025);
+      }
+    }
+  }
 }
