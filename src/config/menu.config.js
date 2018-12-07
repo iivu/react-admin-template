@@ -4,7 +4,7 @@ export const menuHeaderTitle = 'Admin-Template'
 
 export const menuConfig =  [
   {
-    name:'nav1',
+    name:'账户管理',
     icon:'user',
     path:'/nav1',
   },
