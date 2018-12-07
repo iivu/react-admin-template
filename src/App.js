@@ -15,7 +15,7 @@ export default function App () {
           <Route path="/user" component={LoginLayout}/>
           <Route path="/" render={() => {
             if (getAuth()) {
-              return BaseLayout
+              return <BaseLayout/>
             } else {
               return <Redirect to="/user/login"/>
             }

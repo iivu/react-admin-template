@@ -1,3 +1,3 @@
 export function getAuth () {
-  return false
+  return true
 }
