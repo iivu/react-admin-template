@@ -13,9 +13,9 @@ export default function App () {
       <Suspense fallback={<LoadingSpin/>}>
         <Switch>
           <Route path="/user" component={LoginLayout}/>
-          <Route path="/" render={() => {
+          <Route path="/" render={props => {
             if (getAuth()) {
-              return <BaseLayout/>
+              return <BaseLayout {...props}/>
             } else {
               return <Redirect to="/user/login"/>
             }

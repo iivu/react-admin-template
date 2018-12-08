@@ -1,39 +1,49 @@
-import React from 'react'
+import React, {lazy} from 'react'
+
+const Page1 = lazy(() => import('../pages/Page1'))
+const Page2 = lazy(() => import('../pages/Page2'))
+const Exception403 = lazy(() => import('../pages/ExceptionPages/403'))
+const Exception404 = lazy(() => import('../pages/ExceptionPages/404'))
+const Exception500 = lazy(() => import('../pages/ExceptionPages/500'))
+
 
 export const menuHeaderTitle = 'Admin-Template'
 
-export const menuConfig =  [
+export const menuConfig = [
   {
-    name:'账户管理',
-    icon:'user',
-    path:'/nav1',
+    name: 'page1',
+    icon: 'user',
+    path: '/page1',
+    component: Page1,
+    auth: () => false,
   },
   {
-    name:'nav2',
-    icon:'user',
-    path:'/nav2',
+    name: 'page2',
+    icon: 'user',
+    path: '/page2',
+    component: Page2,
   },
   {
-    name:'nav3',
-    icon:'user',
-    path:'/nav3',
-  },
-  {
-    name:'nav4',
-    icon:'user',
-    children:[
+    name: 'exception',
+    path: '/exception',
+    //hideInMenu:true,
+    children: [
       {
-        name:'nav4-1',
-        path:'nav4-1',
+        name: '403',
+        path: '/exception/403',
+        component: Exception403,
       },
       {
-        name:'nav4-2',
-        path:'nav4-2',
+        name: '404',
+        path: '/exception/404',
+        component: Exception404,
+        auth: () => false,
       },
       {
-        name:'nav4-3',
-        path:'nav4-3',
+        name: '500',
+        path: '/exception/500',
+        component: Exception500,
       },
-    ]
+    ],
   },
 ]
