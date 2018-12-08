@@ -22,10 +22,12 @@ function generateMenuItem (menuConfig) {
             {
               config.icon ? <Icon type={config.icon}/> : null
             }
-            {
-              config.path && <Link to={config.path} style={{position:'absolute',left:0,top:0,bottom:0,right:0}}/>
-            }
-            <span>{config.name}</span>
+            <span>
+              {
+                config.path && <Link to={config.path} style={{position: 'absolute', left: 0, top: 0, bottom: 0, right: 0}}/>
+              }
+              {config.name}
+            </span>
           </Menu.Item>
         ))
         //有子菜单且不隐藏子菜单
@@ -48,13 +50,13 @@ function generateMenuItem (menuConfig) {
   return result
 }
 
-function SiderMenu () {
+function SiderMenu ({collapsed}) {
   return (
     <>
       <div className={styles['sider-menu-header']}>
         {menuHeaderTitle}
       </div>
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} inlineCollapsed={collapsed}>
         {generateMenuItem(menuConfig)}
       </Menu>
     </>

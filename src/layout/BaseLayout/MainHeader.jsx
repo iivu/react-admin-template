@@ -3,10 +3,10 @@ import {Icon} from 'antd'
 import styles from './BaseLayout.module.scss'
 
 
-function MainHeader () {
+function MainHeader ({toggleSider,collapsed}) {
   return (
     <div className={styles['main-header-wrap']}>
-      <Icon type="menu-fold" className={styles['menu-toggle-icon']}/>
+      <Icon type={collapsed ? 'menu-unfold':'menu-fold'} className={styles['menu-toggle-icon']} onClick={toggleSider}/>
     </div>
   )
 }
