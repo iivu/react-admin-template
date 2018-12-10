@@ -25,9 +25,11 @@ const httpClient = axios.create({
   timeout: 20000,
   withCredentials: true,
 })
+
+//TODO:待测试
 function httpStatusInterceptor (response) {
   if (response.status >= 200 && response.status < 300) {
-    return response
+    return response.data
   } else {
     const errorMessage = httpCodeMessage[response.status]
     notification.error({

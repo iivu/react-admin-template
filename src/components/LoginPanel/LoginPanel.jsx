@@ -5,6 +5,7 @@ import FormItemConfig from './FormItemConfig'
 import LoginFormItem from './LoginFormItem'
 
 import LoginPanelTitle from './LoginPanelTitle.jsx'
+import {login} from '@/services/api'
 
 class LoginPanel extends Component {
 
@@ -13,9 +14,14 @@ class LoginPanel extends Component {
     const {form} = this.props
     form.validateFieldsAndScroll((error, values) => {
       if (!error) {
-        console.log(values)
+        this.login()
       }
     })
+  }
+
+  async login () {
+    const res = await login().catch(() => false)
+    console.log(res)
   }
 
   render () {
