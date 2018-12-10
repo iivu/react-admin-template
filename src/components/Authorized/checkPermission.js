@@ -8,9 +8,7 @@ export default function checkPermission (auth, target, noMatch) {
 
   if (!auth) return target
 
-  if (typeof auth === 'boolean') {
-    return auth ? target : noMatch
-  }
+  if (typeof auth === 'boolean') return auth ? target : noMatch
 
   if(typeof auth === 'function') {
     if(isPromise(auth())) {
@@ -20,10 +18,7 @@ export default function checkPermission (auth, target, noMatch) {
     }
   }
 
-  if(isPromise(auth)) {
-    return <PromiseComponent promise={auth} target={target} noMatch={noMatch}/>
-  }
-
+  if(isPromise(auth)) return <PromiseComponent promise={auth} target={target} noMatch={noMatch}/>
 
 
 }

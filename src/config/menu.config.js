@@ -37,7 +37,6 @@ export const menuConfig = [
         name: '404',
         path: '/exception/404',
         component: Exception404,
-        auth: () => false,
       },
       {
         name: '500',
