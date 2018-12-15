@@ -2,26 +2,26 @@ import React, {Component} from 'react'
 import {Form, Tab, Button} from 'antd'
 import styles from './LoginPanel.module.scss'
 import FormItemConfig from './FormItemConfig'
-import LoginFormItem from './LoginFormItem'
 
+import LoginFormItem from './LoginFormItem'
 import LoginPanelTitle from './LoginPanelTitle.jsx'
-import {login} from '@/services/api'
+
 
 class LoginPanel extends Component {
+
+  static defaultProps = {
+    login: function () {
+    },
+  }
 
   onLogin = event => {
     event.preventDefault()
     const {form} = this.props
     form.validateFieldsAndScroll((error, values) => {
       if (!error) {
-        this.login()
+        this.props.login(values)
       }
     })
-  }
-
-  async login () {
-    const res = await login().catch(() => false)
-    console.log(res)
   }
 
   render () {

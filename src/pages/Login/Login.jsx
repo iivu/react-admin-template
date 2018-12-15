@@ -1,8 +1,15 @@
 import React from 'react'
 import LoginPanel from '@/components/LoginPanel'
 
-export default function Login () {
+export default function Login ({loginModel}) {
+
+  function login(values) {
+    console.log(values)
+  }
+
+  console.log(loginModel)
+
   return (
-    <LoginPanel/>
+    <LoginPanel login={login}/>
   )
 }
