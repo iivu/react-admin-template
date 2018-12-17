@@ -5,12 +5,14 @@ import {actions} from './models'
 
 export default function Login({loginModel, dispatch}) {
 
+  const {loading} = loginModel
+
   function login(values) {
     dispatch(actions.login(values))
   }
 
 
   return (
-    <LoginPanel login={login}/>
+    <LoginPanel login={login} loading={loading}/>
   )
 }

@@ -1,13 +1,14 @@
 import {
   SET_LOGIN_TAG,
   LOGOUT,
-  LOGIN
+  LOGIN,
+  SET_LOGIN_MODEL_LOADING_TAG,
 } from './actionTypes'
 
-export function setLoginTag(loginTag) {
+export function setLoginTag(payload) {
   return {
     type: SET_LOGIN_TAG,
-    payload: loginTag,
+    payload,
   }
 }
 
@@ -18,9 +19,15 @@ export function login(payload) {
   }
 }
 
-
 export function logout() {
   return {
     type: LOGOUT,
+  }
+}
+
+export function setLoginModelLoadingTag(payload) {
+  return {
+    type:SET_LOGIN_MODEL_LOADING_TAG,
+    payload,
   }
 }

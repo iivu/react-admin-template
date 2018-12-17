@@ -1,11 +1,12 @@
 import {delay} from 'redux-saga'
-import {takeLatest, put, call} from 'redux-saga/effects'
-import {LOGIN,LOGOUT} from './actionTypes'
+import {put, call} from 'redux-saga/effects'
+import {LOGIN, LOGOUT} from './actionTypes'
 import * as actions from './actions'
+import {createLoadingTakeLatest} from '@/utils/helpers'
 
 function* login({payload}) {
-  yield call(delay,3000)
-  yield put(actions.setLoginTag(true))
+  yield call(delay, 3000)
+
 }
 
 function* logout() {
@@ -13,8 +14,15 @@ function* logout() {
 
 }
 
+const handlerMap = {
+  [LOGIN]: login,
+  [LOGOUT]: logout,
+}
+
 
 export default function* watcherSaga() {
-  yield takeLatest(LOGIN,login)
-  yield takeLatest(LOGOUT,logout)
+
+  yield createLoadingTakeLatest(handlerMap, Object.keys(handlerMap), actions.setLoginModelLoadingTag)
+
+
 }

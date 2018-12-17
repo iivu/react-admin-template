@@ -25,7 +25,7 @@ class LoginPanel extends Component {
   }
 
   render () {
-    const {form} = this.props
+    const {form,loading} = this.props
     const formItemKeys = Object.keys(FormItemConfig)
     return (
       <>
@@ -37,7 +37,7 @@ class LoginPanel extends Component {
                 <LoginFormItem type={key} config={FormItemConfig[key]} form={form} key={index}/>
               ))
             }
-            <Button htmlType="submit" type="primary" size="large" style={{width: '100%'}}>Log In</Button>
+            <Button loading={loading} htmlType="submit" type="primary" size="large" style={{width: '100%'}}>Log In</Button>
           </Form>
         </div>
       </>

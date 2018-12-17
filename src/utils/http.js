@@ -3,6 +3,8 @@ import {notification} from 'antd'
 import axios from 'axios'
 import store from '@/store'
 
+const history = createHashHistory()
+
 const httpCodeMessage = {
   200: '服务器成功返回请求的数据。',
   201: '新建或修改数据成功。',
@@ -20,7 +22,6 @@ const httpCodeMessage = {
   503: '服务不可用，服务器暂时过载或维护。',
   504: '网关超时。',
 }
-const history = createHashHistory()
 const httpClient = axios.create({
   baseURL: '/',
   timeout: 20000,
