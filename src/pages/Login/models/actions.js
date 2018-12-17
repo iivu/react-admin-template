@@ -14,7 +14,7 @@ export function setLoginTag(loginTag) {
 export function login(payload) {
   return {
     type: LOGIN,
-    payload: loginTag,
+    payload,
   }
 }
 

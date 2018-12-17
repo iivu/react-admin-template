@@ -1,13 +1,14 @@
 import React from 'react'
 import LoginPanel from '@/components/LoginPanel'
 
-export default function Login ({loginModel}) {
+import {actions} from './models'
+
+export default function Login({loginModel, dispatch}) {
 
   function login(values) {
-    console.log(values)
+    dispatch(actions.login(values))
   }
 
-  console.log(loginModel)
 
   return (
     <LoginPanel login={login}/>

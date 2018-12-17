@@ -1,6 +1,7 @@
 import {createHashHistory} from 'history'
 import {notification} from 'antd'
 import axios from 'axios'
+import store from '@/store'
 
 const httpCodeMessage = {
   200: '服务器成功返回请求的数据。',
