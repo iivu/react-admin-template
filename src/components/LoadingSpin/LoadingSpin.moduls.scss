@@ -1,0 +1,5 @@
+@import "../../utils/common";
+
+.spin-wrap {
+  @include position-center;
+}
